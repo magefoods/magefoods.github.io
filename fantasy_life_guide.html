@@ -178,7 +178,7 @@
         }
 
         .warning::before {
-            content: "⚠️ ";
+            content: " ";
             font-size: 1.2rem;
         }
 
@@ -222,9 +222,34 @@
     </style>
 </head>
 <body>
-    <div style="padding: 1rem; text-align: center;">
-        <a href="index.html" style="margin: 0 1rem;">🏠 Home</a>
-        <a href="achievement_tracker.html" style="margin: 0 1rem;">🏆 Main</a>
+    
+    <style>
+        .nav-buttons {
+            padding: 1rem;
+            text-align: center;
+        }
+        .nav-buttons a {
+            display: inline-block;
+            margin: 0.5rem 1rem;
+            padding: 0.7rem 1.5rem;
+            background: white;
+            color: #764ba2;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: background 0.3s, transform 0.2s;
+        }
+        .nav-buttons a:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px);
+        }
+    </style>
+
+    <div class="nav-buttons">
+        <a href="index.html">Home</a>
+        <a href="achievement_tracker.html">Main</a>
     </div>
     
     <div class="container">
@@ -242,7 +267,7 @@
 
         <!-- Infinite Dosh Section -->
         <section id="dosh" class="content-section active">
-            <h2>Infinite Dosh</h2>
+            <h2> Infinite Dosh</h2>
             
             <div class="highlight">
                 <strong>Quick Setup:</strong> Level up Marco's shop to level 2 and buy the Artist Recipe 'White Woolie Sticker'
@@ -278,13 +303,13 @@
             <div class="stats-box">
                 <div class="stats-number">821,780</div>
                 <div>Dosh profit from 999 of each ingredient with perfect crafts</div>
-                <div style="margin-top: 1rem; font-weight: 600;">⏱️ Takes less than 10 minutes!</div>
+                <div style="margin-top: 1rem; font-weight: 600;">⏱ Takes less than 10 minutes!</div>
             </div>
         </section>
 
         <!-- Redux Stones Section -->
         <section id="redux" class="content-section">
-            <h2>Infinite Redux Stones</h2>
+            <h2> Infinite Redux Stones</h2>
             
             <p>Using your massive wealth, you can now get as many Redux Stones as you need!</p>
 
@@ -308,7 +333,7 @@
 
         <!-- Bulk Crafting Section -->
         <section id="bulk" class="content-section">
-            <h2>Leveling Crafting Lives to 100</h2>
+            <h2> Leveling Crafting Lives to 100</h2>
             
             <p>For 3 of the 6 Crafting Lives, we can use bulk crafting methods. The EXP gained depends on:</p>
             
@@ -327,7 +352,7 @@
                 </div>
             </div>
 
-            <h3>🧪 Alchemist - Heal-All</h3>
+            <h3> Alchemist - Heal-All</h3>
             <div class="recipe-card">
                 <div class="recipe-title">Heal-All (4-Star Potion)</div>
                 <p><strong>Requirements:</strong></p>
@@ -341,7 +366,7 @@
                 <p>From perfect craft of 33 Heal-All (results in 83 total)</p>
             </div>
 
-            <h3>🎨 Artist - Rainbow Dye</h3>
+            <h3> Artist - Rainbow Dye</h3>
             <div class="recipe-card">
                 <div class="recipe-title">Rainbow Dye (5-Star Material)</div>
                 <p><strong>Requirements (all from Marco's Shop):</strong></p>
@@ -361,7 +386,7 @@
                 <strong>Alternative Artist Method:</strong> Starry Night Streetlamp (4-Star, 3 ingredients) - grants around 7,072,009 EXP per batch of 10! Requires 920 Artistry.
             </div>
 
-            <h3>👨‍🍳 Cook - Magical Milkshake</h3>
+            <h3>‍ Cook - Magical Milkshake</h3>
             <div class="recipe-card">
                 <div class="recipe-title">Magical Milkshake (5-Star Meal)</div>
                 <p><strong>Requirements:</strong></p>
@@ -384,7 +409,7 @@
 
         <!-- Remaking Section -->
         <section id="remaking" class="content-section">
-            <h2>Remaking Method</h2>
+            <h2> Remaking Method</h2>
             
             <p>For the final 3 Crafting Lives (Carpenter, Blacksmith, and Tailor), we use the Remaking method with our Infinite Redux Stones.</p>
 
@@ -420,15 +445,15 @@
             <h3>Lives That Use Remaking</h3>
             <div class="materials-grid">
                 <div class="material-item">
-                    <div class="material-name">🔨 Blacksmith</div>
+                    <div class="material-name"> Blacksmith</div>
                     <div>Remake weapons and metal armor</div>
                 </div>
                 <div class="material-item">
-                    <div class="material-name">🪵 Carpenter</div>
+                    <div class="material-name"> Carpenter</div>
                     <div>Remake bows and wooden items</div>
                 </div>
                 <div class="material-item">
-                    <div class="material-name">🧵 Tailor</div>
+                    <div class="material-name"> Tailor</div>
                     <div>Remake cloth armor and accessories</div>
                 </div>
             </div>
