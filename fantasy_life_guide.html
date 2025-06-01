@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Life i - Complete Crafting Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .nav-pills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .nav-pill {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 12px 24px;
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-pill:hover, .nav-pill.active {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .content-section {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #4a5568;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .material-item {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .material-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+
+        .material-name {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .material-price {
+            color: #38a169;
+            font-weight: 500;
+        }
+
+        .stats-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #c53030;
+            margin-bottom: 0.5rem;
+        }
+
+        .warning {
+            background: #fed7d7;
+            border: 2px solid #feb2b2;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .warning::before {
+            content: "⚠️ ";
+            font-size: 1.2rem;
+        }
+
+        .recipe-card {
+            background: #f0fff4;
+            border: 2px solid #68d391;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .recipe-title {
+            color: #38a169;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-pills {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="padding: 1rem; text-align: center;">
+        <a href="index.html" style="margin: 0 1rem;">🏠 Home</a>
+        <a href="achievement_tracker.html" style="margin: 0 1rem;">🏆 Main</a>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Fantasy Life i</h1>
+            <p class="subtitle">Complete Crafting & Money Making Guide</p>
+        </header>
+
+        <nav class="nav-pills">
+            <a href="#" class="nav-pill active" onclick="showSection('dosh', this)">💰 Infinite Dosh</a>
+            <a href="#" class="nav-pill" onclick="showSection('redux', this)">💎 Redux Stones</a>
+            <a href="#" class="nav-pill" onclick="showSection('bulk', this)">📈 Bulk Crafting</a>
+            <a href="#" class="nav-pill" onclick="showSection('remaking', this)">🔄 Remaking</a>
+        </nav>
+
+        <!-- Infinite Dosh Section -->
+        <section id="dosh" class="content-section active">
+            <h2>💰 Infinite Dosh</h2>
+            
+            <div class="highlight">
+                <strong>Quick Setup:</strong> Level up Marco's shop to level 2 and buy the Artist Recipe 'White Woolie Sticker'
+            </div>
+
+            <h3>Required Materials</h3>
+            <p>Buy an EQUAL AMOUNT of these materials in the highest quantity you can afford:</p>
+            
+            <div class="materials-grid">
+                <div class="material-item">
+                    <div class="material-name">Desert Log</div>
+                    <div class="material-price">50 Dosh each (Marco's Shop)</div>
+                </div>
+                <div class="material-item">
+                    <div class="material-name">Sheep Fleece</div>
+                    <div class="material-price">50 Dosh each (Marco's Shop)</div>
+                </div>
+                <div class="material-item">
+                    <div class="material-name">Red Paint</div>
+                    <div class="material-price">80 Dosh each (Material Shop, Tropica Isles)</div>
+                </div>
+            </div>
+
+            <h3>Crafting Process</h3>
+            <p>Find the 'White Woolie Sticker' recipe in the Materials tab. The recipe recommends Artistry Level 250, but higher levels will reduce crafting steps and speed up the process.</p>
+            
+            <div class="warning">
+                <strong>Pro tip:</strong> Don't use auto-craft! Manual crafting gives much better Dosh returns.
+            </div>
+
+            <p>Craft as many White Woolie Stickers as possible at once. With 99 materials and a PERFECT craft, you'll get 248 Stickers. Any extras over your carrying capacity will be sold automatically.</p>
+
+            <div class="stats-box">
+                <div class="stats-number">821,780</div>
+                <div>Dosh profit from 999 of each ingredient with perfect crafts</div>
+                <div style="margin-top: 1rem; font-weight: 600;">⏱️ Takes less than 10 minutes!</div>
+            </div>
+        </section>
+
+        <!-- Redux Stones Section -->
+        <section id="redux" class="content-section">
+            <h2>💎 Infinite Redux Stones</h2>
+            
+            <p>Using your massive wealth, you can now get as many Redux Stones as you need!</p>
+
+            <h3>The Process</h3>
+            <p>Travel to <strong>Capital of Mysteria</strong> and head to the Armor Shop on the eastern side of town.</p>
+
+            <div class="recipe-card">
+                <div class="recipe-title">Long Cape Method</div>
+                <p><strong>Buy:</strong> Long Cape for 360 Dosh each (buy an EVEN number)</p>
+                <p><strong>Trade:</strong> At Collector's Shop (western side) - each cape = 50 points</p>
+                <p><strong>Cost:</strong> 100 points = 1 Redux Stone</p>
+                <p><strong>Final Cost:</strong> 720 Dosh per Redux Stone</p>
+            </div>
+
+            <div class="highlight">
+                Since each Long Cape gives 50 points and you need 100 points for a Redux Stone, you need 2 capes per stone. That's why you buy an even number!
+            </div>
+
+            <p>Repeat this process as many times as you like, but keep some Redux Stones aside for the remaking section.</p>
+        </section>
+
+        <!-- Bulk Crafting Section -->
+        <section id="bulk" class="content-section">
+            <h2>📈 Leveling Crafting Lives to 100</h2>
+            
+            <p>For 3 of the 6 Crafting Lives, we can use bulk crafting methods. The EXP gained depends on:</p>
+            
+            <div class="materials-grid">
+                <div class="material-item">
+                    <div class="material-name">Recipe Rarity</div>
+                    <div>Number of stars next to recipe name</div>
+                </div>
+                <div class="material-item">
+                    <div class="material-name">Ingredient Count</div>
+                    <div>Number of ingredients needed</div>
+                </div>
+                <div class="material-item">
+                    <div class="material-name">Ingredient Rarity</div>
+                    <div>Quality of required materials</div>
+                </div>
+            </div>
+
+            <h3>🧪 Alchemist - Heal-All</h3>
+            <div class="recipe-card">
+                <div class="recipe-title">Heal-All (4-Star Potion)</div>
+                <p><strong>Requirements:</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Hi-HP Potion x3 - 540 Dosh each (Tool Shop, Tropica Isles)</li>
+                    <li>Gigaga Truffle x2 - 300 Dosh each (Restaurant, Swolean Island)</li>
+                    <li>Trial Cavedew x2 - 100 Dosh each (Restaurant, Swolean Island)</li>
+                </ul>
+                <p><strong>Recommended Skill:</strong> 720 Alchemy</p>
+                <div class="stats-number">1,467,601 EXP</div>
+                <p>From perfect craft of 33 Heal-All (results in 83 total)</p>
+            </div>
+
+            <h3>🎨 Artist - Rainbow Dye</h3>
+            <div class="recipe-card">
+                <div class="recipe-title">Rainbow Dye (5-Star Material)</div>
+                <p><strong>Requirements (all from Marco's Shop):</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Blue Anthurium x2 - 30 Dosh each</li>
+                    <li>Red Anthurium x2 - 30 Dosh each</li>
+                    <li>Yellow Anthurium x2 - 50 Dosh each</li>
+                    <li>White Anthurium x1 - 80 Dosh each</li>
+                    <li>Black Anthurium x1 - 100 Dosh each</li>
+                </ul>
+                <p><strong>Recommended Skill:</strong> 680 Artistry</p>
+                <div class="stats-number">2,157,044 EXP</div>
+                <p>From perfect craft of 99 Rainbow Dye (results in 248 total)</p>
+            </div>
+
+            <div class="highlight">
+                <strong>Alternative Artist Method:</strong> Starry Night Streetlamp (4-Star, 3 ingredients) - grants around 7,072,009 EXP per batch of 10! Requires 920 Artistry.
+            </div>
+
+            <h3>👨‍🍳 Cook - Magical Milkshake</h3>
+            <div class="recipe-card">
+                <div class="recipe-title">Magical Milkshake (5-Star Meal)</div>
+                <p><strong>Requirements:</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Beach Watermelon x2 - 400 Dosh each (Marco's Shop)</li>
+                    <li>Wild Kiwi x2 - 230 Dosh each (Swolean Island/Marco's)</li>
+                    <li>Cave Strawberries x2 - 300 Dosh each (Swolean Island/Marco's)</li>
+                    <li>Dark Honey x2 - 750 Dosh each (Restaurant, Tropica Isles)</li>
+                    <li>Uber-Rich Milk x2 - 750 Dosh each (Restaurant, Swolean Island)</li>
+                </ul>
+                <p><strong>Recommended Skill:</strong> 780 Cooking</p>
+                <div class="stats-number">3,100,451 EXP</div>
+                <p>From perfect craft of 49 Magical Milkshake (results in 123 total)</p>
+            </div>
+
+            <div class="warning">
+                All these ingredients are consumables, so you can only carry 99 of each at a time.
+            </div>
+        </section>
+
+        <!-- Remaking Section -->
+        <section id="remaking" class="content-section">
+            <h2>🔄 Remaking Method</h2>
+            
+            <p>For the final 3 Crafting Lives (Carpenter, Blacksmith, and Tailor), we use the Remaking method with our Infinite Redux Stones.</p>
+
+            <h3>How Remaking Works</h3>
+            <p>Remaking equipment changes the bonus stats randomly in exchange for Redux Stones. The amount of EXP gained depends on:</p>
+            
+            <div class="materials-grid">
+                <div class="material-item">
+                    <div class="material-name">Equipment Rank</div>
+                    <div>Higher rank = more EXP</div>
+                </div>
+                <div class="material-item">
+                    <div class="material-name">Required Skill</div>
+                    <div>Higher skill requirement = more EXP</div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-title">Remaking Process</div>
+                <ol style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Go to a crafting bench</li>
+                    <li>Select "Remake"</li>
+                    <li>Find the highest rank equipment for your target crafting life</li>
+                    <li>Remake it repeatedly using Redux Stones</li>
+                    <li>Gain massive EXP each time!</li>
+                </ol>
+            </div>
+
+            <div class="highlight">
+                <strong>Pro Tip:</strong> This method can also be used for Alchemist or any crafting life that can remake equipment. It's especially useful when bulk crafting isn't viable.
+            </div>
+
+            <h3>Lives That Use Remaking</h3>
+            <div class="materials-grid">
+                <div class="material-item">
+                    <div class="material-name">🔨 Blacksmith</div>
+                    <div>Remake weapons and metal armor</div>
+                </div>
+                <div class="material-item">
+                    <div class="material-name">🪵 Carpenter</div>
+                    <div>Remake bows and wooden items</div>
+                </div>
+                <div class="material-item">
+                    <div class="material-name">🧵 Tailor</div>
+                    <div>Remake cloth armor and accessories</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showSection(sectionId, clickedPill) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all pills
+            const pills = document.querySelectorAll('.nav-pill');
+            pills.forEach(pill => pill.classList.remove('active'));
+            
+            // Show selected section and activate pill
+            document.getElementById(sectionId).classList.add('active');
+            clickedPill.classList.add('active');
+        }
+
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('.nav-pill').forEach(pill => {
+            pill.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Small delay to let the content load, then scroll to top
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
